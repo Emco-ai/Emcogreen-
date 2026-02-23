@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emco Green - True Organics Chlorophyll | Natural Energy & Glowing Skin</title>
-    <meta name="description" content="True Organics Liquid Chlorophyll Drops (R120) and Juice (R60). Natural energy, clearer skin, better digestion. Pick up in Johannesburg. 10% off first order.">
+    <title>Emco Green - True Organics Chlorophyll | Join Our Wellness Movement</title>
+    <meta name="description" content="True Organics Liquid Chlorophyll Drops (R120) and Juice (R60). Become a distributor and start your wellness business today.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,6 +25,9 @@
         
         .pulse-green { animation: pulseGreen 2s infinite; }
         @keyframes pulseGreen { 0%, 100% { box-shadow: 0 0 0 0 rgba(74, 124, 35, 0.4); } 50% { box-shadow: 0 0 0 15px rgba(74, 124, 35, 0); } }
+        
+        .pulse-gold { animation: pulseGold 2s infinite; }
+        @keyframes pulseGold { 0%, 100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); } 50% { box-shadow: 0 0 0 15px rgba(255, 193, 7, 0); } }
         
         /* Video modal */
         .video-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; }
@@ -49,22 +52,95 @@
         .product-card { transition: all 0.3s ease; }
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         
+        /* Distributor button styles */
+        .distributor-btn { 
+            background: linear-gradient(135deg, #FFD700 0%, #FFA000 100%);
+            color: #1a1a1a;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(255, 160, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .distributor-btn:hover { 
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 160, 0, 0.4);
+        }
+        
+        /* Sticky distributor bar */
+        .sticky-distributor {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 12px;
+            z-index: 35;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+        .sticky-distributor.visible {
+            transform: translateY(0);
+        }
+        
+        /* Floating distributor button */
+        .floating-distributor {
+            position: fixed;
+            bottom: 100px;
+            right: 6px;
+            z-index: 45;
+            animation: slideInRight 0.5s ease-out;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
         /* Gradient text */
         .gradient-text { background: linear-gradient(135deg, #2D5016 0%, #4A7C23 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Gold gradient text */
+        .gold-text { background: linear-gradient(135deg, #FFD700 0%, #FFA000 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
 
+    <!-- Sticky Distributor Banner (appears after scrolling) -->
+    <div class="sticky-distributor" id="stickyDistributor">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <i data-lucide="trending-up" class="w-5 h-5 text-yellow-400"></i>
+                <span class="text-sm md:text-base font-semibold">Start Your Own Wellness Business Today!</span>
+            </div>
+            <a href="https://trueorganics.life/join-us/TO99252947762" 
+               target="_blank"
+               class="distributor-btn px-4 py-2 rounded-full text-sm whitespace-nowrap">
+                Join Now →
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Distributor Button (Mobile Optimized) -->
+    <div class="floating-distributor md:hidden">
+        <a href="https://trueorganics.life/join-us/TO99252947762" 
+           target="_blank"
+           class="distributor-btn px-4 py-3 rounded-full shadow-lg flex items-center space-x-2 pulse-gold">
+            <i data-lucide="briefcase" class="w-5 h-5"></i>
+            <span class="font-bold text-sm">Join Business</span>
+        </a>
+    </div>
+
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/27719117375?text=Hi%20Emco%20Green!%20I'm%20interested%20in%20ordering%20True%20Organics%20Chlorophyll%20(Juice%20R60%20or%20Drops%20R120)%20with%20the%2010%25%20first-time%20discount.%20Please%20assist%20me." 
        target="_blank" 
-       class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl whatsapp-pulse flex items-center gap-2 transition-all hover:scale-110">
+       class="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl whatsapp-pulse flex items-center gap-2 transition-all hover:scale-110 md:bottom-6 md:right-6">
         <i data-lucide="message-circle" class="w-6 h-6"></i>
         <span class="hidden md:inline font-semibold">Order on WhatsApp</span>
     </a>
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-40 transition-all duration-300" id="navbar">
+    <nav class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
@@ -74,20 +150,26 @@
                     <span class="text-2xl font-bold text-green-800">Emco Green</span>
                 </div>
                 
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-6">
                     <a href="#products" class="text-gray-600 hover:text-green-700 font-medium transition-colors">Products</a>
                     <a href="#benefits" class="text-gray-600 hover:text-green-700 font-medium transition-colors">Benefits</a>
-                    <a href="#how-it-works" class="text-gray-600 hover:text-green-700 font-medium transition-colors">How To Use</a>
+                    <a href="#business" class="text-gray-600 hover:text-green-700 font-medium transition-colors text-yellow-600 font-semibold">Business Opportunity</a>
                     <a href="#testimonials" class="text-gray-600 hover:text-green-700 font-medium transition-colors">Reviews</a>
-                    <a href="#distributors" class="text-gray-600 hover:text-green-700 font-medium transition-colors">Join Us</a>
                 </div>
                 
-                <a href="https://wa.me/27719117375?text=Hi%20Emco%20Green!%20I%20want%20to%20order%20with%2010%25%20discount" 
-                   target="_blank"
-                   class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-semibold transition-all transform hover:scale-105 flex items-center gap-2">
-                    <i data-lucide="shopping-cart" class="w-4 h-4"></i>
-                    <span>Order Now</span>
-                </a>
+                <div class="flex items-center space-x-2">
+                    <a href="https://trueorganics.life/join-us/TO99252947762" 
+                       target="_blank"
+                       class="hidden md:inline-flex distributor-btn px-4 py-2 rounded-full text-sm items-center space-x-1">
+                        <i data-lucide="briefcase" class="w-4 h-4"></i>
+                        <span>Join Business</span>
+                    </a>
+                    <a href="https://wa.me/27719117375?text=Hi%20Emco%20Green!%20I%20want%20to%20order%20with%2010%25%20discount" 
+                       target="_blank"
+                       class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-semibold transition-all text-sm">
+                        Order
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -97,7 +179,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
-                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-semibold mb-6">
+                    <!-- Distributor Badge -->
+                    <a href="https://trueorganics.life/join-us/TO99252947762" target="_blank" class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 text-sm font-bold mb-6 hover:shadow-lg transition-shadow">
+                        <i data-lucide="star" class="w-4 h-4 mr-2"></i>
+                        Become a Distributor - Earn Extra Income!
+                    </a>
+                    
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-semibold mb-4">
                         <span class="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
                         Now Available in Johannesburg - Pickup Only
                     </div>
@@ -108,26 +196,26 @@
                         in Just 30 Days
                     </h1>
                     
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                        Discover the power of True Organics Chlorophyll. Choose between our convenient <strong>Drops (R120)</strong> or ready-to-drink <strong>Juice (R60)</strong>.
+                    <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+                        Discover True Organics Chlorophyll. Choose between our convenient <strong>Drops (R120)</strong> or ready-to-drink <strong>Juice (R60)</strong>.
                     </p>
-                    
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center space-x-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-                            <span class="text-gray-700 font-medium">Natural Energy</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-                            <span class="text-gray-700 font-medium">Clearer Skin</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-                            <span class="text-gray-700 font-medium">Better Digestion</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-                            <span class="text-gray-700 font-medium">Full Body Detox</span>
+
+                    <!-- Distributor CTA in Hero -->
+                    <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-400 rounded-2xl p-6 mb-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-gray-900"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-bold text-gray-900 mb-1">Want to Earn Extra Income?</h3>
+                                <p class="text-gray-700 text-sm mb-3">Join 500+ distributors earning with True Organics. Start your wellness business today!</p>
+                                <a href="https://trueorganics.life/join-us/TO99252947762" 
+                                   target="_blank"
+                                   class="distributor-btn px-6 py-3 rounded-full text-sm inline-flex items-center space-x-2 pulse-gold">
+                                    <span>Become a Distributor Now</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     
@@ -141,7 +229,7 @@
                         
                         <button onclick="openVideoModal()" class="bg-white border-2 border-green-700 text-green-700 hover:bg-green-50 px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center space-x-2">
                             <i data-lucide="play-circle" class="w-5 h-5"></i>
-                            <span>Watch 14-Min Video</span>
+                            <span>Watch Video</span>
                         </button>
                     </div>
                     
@@ -153,10 +241,6 @@
                         <div class="flex items-center space-x-1">
                             <i data-lucide="shield-check" class="w-4 h-4 text-green-600"></i>
                             <span>30-Day Guarantee</span>
-                        </div>
-                        <div class="flex items-center space-x-1">
-                            <i data-lucide="award" class="w-4 h-4 text-green-600"></i>
-                            <span>True Organics</span>
                         </div>
                     </div>
                 </div>
@@ -195,12 +279,34 @@
                             </div>
                         </div>
                         
-                        <!-- Badge -->
                         <div class="absolute -top-4 -right-4 bg-orange-500 text-white px-4 py-2 rounded-full font-bold shadow-lg transform rotate-12">
                             10% OFF!
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Distributor Banner 1 -->
+    <section class="py-8 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-4">
+                    <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-gray-900"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold gold-text">Start Your Own Business Today!</h3>
+                        <p class="text-gray-300">Join 500+ successful distributors earning with True Organics</p>
+                    </div>
+                </div>
+                <a href="https://trueorganics.life/join-us/TO99252947762" 
+                   target="_blank"
+                   class="distributor-btn px-8 py-4 rounded-full font-bold text-lg flex items-center space-x-2 pulse-gold whitespace-nowrap">
+                    <span>Apply Now - It's Free!</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -213,7 +319,7 @@
                 <p class="text-xl text-gray-600">Two convenient options, same powerful benefits</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
                 <!-- Juice Option -->
                 <div class="bg-gradient-to-br from-green-50 to-white rounded-3xl p-8 border-2 border-green-200 product-card relative">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-1 rounded-full text-sm font-bold">
@@ -242,22 +348,25 @@
                         </li>
                         <li class="flex items-center space-x-3">
                             <i data-lucide="check" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-                            <span>Drink quarterly (4 servings per bottle)</span>
+                            <span>Drink quarterly (4 servings/bottle)</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <i data-lucide="check" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
                             <span>Perfect for beginners</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-                            <span>Natural mint flavor</span>
-                        </li>
                     </ul>
                     
                     <a href="https://wa.me/27719117375?text=Hi%20Emco%20Green!%20I%20want%20to%20order%20the%20Chlorophyll%20JUICE%20(R60)%20with%20my%2010%25%20first-time%20discount%20(R54).%20Please%20assist." 
                        target="_blank"
-                       class="block w-full bg-green-700 hover:bg-green-800 text-white text-center py-4 rounded-full font-bold transition-all transform hover:scale-105">
+                       class="block w-full bg-green-700 hover:bg-green-800 text-white text-center py-4 rounded-full font-bold transition-all transform hover:scale-105 mb-3">
                         Order Juice on WhatsApp
+                    </a>
+                    
+                    <!-- Mini distributor CTA -->
+                    <a href="https://trueorganics.life/join-us/TO99252947762" 
+                       target="_blank"
+                       class="block w-full text-center text-sm text-yellow-600 font-semibold hover:text-yellow-700 py-2">
+                        Or sell this product → Become a Distributor
                     </a>
                 </div>
                 
@@ -293,18 +402,34 @@
                         </li>
                         <li class="flex items-center space-x-3">
                             <i data-lucide="check" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-                            <span>Long-lasting supply</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-                            <span>Customizable strength</span>
+                            <span>Long-lasting supply (30 days)</span>
                         </li>
                     </ul>
                     
                     <a href="https://wa.me/27719117375?text=Hi%20Emco%20Green!%20I%20want%20to%20order%20the%20Chlorophyll%20DROPS%20(R120)%20with%20my%2010%25%20first-time%20discount%20(R108).%20Please%20assist." 
                        target="_blank"
-                       class="block w-full bg-indigo-700 hover:bg-indigo-800 text-white text-center py-4 rounded-full font-bold transition-all transform hover:scale-105">
+                       class="block w-full bg-indigo-700 hover:bg-indigo-800 text-white text-center py-4 rounded-full font-bold transition-all transform hover:scale-105 mb-3">
                         Order Drops on WhatsApp
+                    </a>
+                    
+                    <!-- Mini distributor CTA -->
+                    <a href="https://trueorganics.life/join-us/TO99252947762" 
+                       target="_blank"
+                       class="block w-full text-center text-sm text-yellow-600 font-semibold hover:text-yellow-700 py-2">
+                        Or sell this product → Become a Distributor
+                    </a>
+                </div>
+            </div>
+
+            <!-- Center Distributor CTA -->
+            <div class="text-center">
+                <div class="inline-block bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl p-6 border-2 border-yellow-400">
+                    <p class="text-gray-800 font-semibold mb-3">Want to sell both products and earn commission?</p>
+                    <a href="https://trueorganics.life/join-us/TO99252947762" 
+                       target="_blank"
+                       class="distributor-btn px-8 py-3 rounded-full font-bold inline-flex items-center space-x-2">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                        <span>Become a Distributor - It's Free!</span>
                     </a>
                 </div>
             </div>
@@ -319,7 +444,7 @@
                 <p class="text-xl text-gray-600">Powerful benefits in every drop or sip</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div class="text-center p-6 rounded-2xl bg-white shadow-md hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 mx-auto bg-green-600 rounded-full flex items-center justify-center mb-4">
                         <i data-lucide="zap" class="w-8 h-8 text-white"></i>
@@ -351,6 +476,18 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Better Digestion</h3>
                     <p class="text-gray-600">Reduce bloating and improve gut health for overall wellness.</p>
                 </div>
+            </div>
+
+            <!-- Distributor CTA after benefits -->
+            <div class="bg-green-900 rounded-3xl p-8 text-center text-white">
+                <h3 class="text-2xl font-bold mb-3">Love These Benefits? Share Them & Earn!</h3>
+                <p class="text-green-100 mb-6">Help others discover True Organics and build your own income stream</p>
+                <a href="https://trueorganics.life/join-us/TO99252947762" 
+                   target="_blank"
+                   class="distributor-btn px-8 py-4 rounded-full font-bold text-lg inline-flex items-center space-x-2 pulse-gold">
+                    <span>Start Your Distributor Business</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -389,21 +526,10 @@
                             <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">2</div>
                             <div>
                                 <p class="font-semibold">Drink quarterly</p>
-                                <p class="text-green-200 text-sm">One bottle = 4 servings. Drink 1/4 of the bottle per session</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">3</div>
-                            <div>
-                                <p class="font-semibold">Best taken in morning</p>
-                                <p class="text-green-200 text-sm">On an empty stomach for maximum absorption</p>
+                                <p class="text-green-200 text-sm">One bottle = 4 servings</p>
                             </div>
                         </li>
                     </ul>
-                    
-                    <div class="mt-6 p-4 bg-white/10 rounded-xl">
-                        <p class="text-sm text-green-100"><i data-lucide="info" class="w-4 h-4 inline mr-2"></i>One bottle lasts 4 days if taken daily</p>
-                    </div>
                 </div>
                 
                 <!-- Drops Instructions -->
@@ -424,33 +550,22 @@
                             <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">1</div>
                             <div>
                                 <p class="font-semibold">Get a glass of water</p>
-                                <p class="text-green-200 text-sm">250-300ml of room temperature water</p>
+                                <p class="text-green-200 text-sm">250-300ml room temperature</p>
                             </div>
                         </li>
                         <li class="flex items-start space-x-3">
                             <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">2</div>
                             <div>
                                 <p class="font-semibold">Add 10 drops</p>
-                                <p class="text-green-200 text-sm">Use the dropper to add exactly 10 drops to your water</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">3</div>
-                            <div>
-                                <p class="font-semibold">Stir and drink</p>
-                                <p class="text-green-200 text-sm">Mix well and drink immediately. Best on empty stomach.</p>
+                                <p class="text-green-200 text-sm">Use dropper, mix well, drink</p>
                             </div>
                         </li>
                     </ul>
-                    
-                    <div class="mt-6 p-4 bg-white/10 rounded-xl">
-                        <p class="text-sm text-green-100"><i data-lucide="info" class="w-4 h-4 inline mr-2"></i>One bottle lasts 30 days (300 drops total)</p>
-                    </div>
                 </div>
             </div>
             
             <!-- Collection Point -->
-            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-3xl mx-auto">
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-3xl mx-auto mb-12">
                 <div class="flex items-start space-x-4">
                     <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
                         <i data-lucide="map-pin" class="w-6 h-6"></i>
@@ -458,20 +573,137 @@
                     <div>
                         <h3 class="text-xl font-bold mb-2">Collection Point</h3>
                         <p class="text-green-100 mb-2"><strong>233 Bree Street, Master Mall</strong></p>
-                        <p class="text-green-100 mb-2">Opposite Fashion Fusion Building, First Shop</p>
-                        <p class="text-green-100 mb-4">Ask for <strong>MC</strong> when you arrive for directions</p>
-                        <div class="flex flex-wrap gap-4">
-                            <a href="tel:+27780731307" class="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition-colors">
-                                <i data-lucide="phone" class="w-4 h-4"></i>
-                                <span>Call MC: 078 073 1307</span>
-                            </a>
-                            <a href="https://wa.me/27719117375" class="inline-flex items-center space-x-2 bg-green-500 hover:bg-green-600 px-4 py-2 rounded-full transition-colors">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                <span>WhatsApp Order</span>
-                            </a>
-                        </div>
+                        <p class="text-green-100 mb-2">Opposite Fashion Fusion, First Shop</p>
+                        <p class="text-green-100 mb-4">Ask for <strong>MC</strong>: 078 073 1307</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Distributor CTA in How It Works -->
+            <div class="text-center">
+                <a href="https://trueorganics.life/join-us/TO99252947762" 
+                   target="_blank"
+                   class="distributor-btn px-8 py-4 rounded-full font-bold text-lg inline-flex items-center space-x-2 pulse-gold">
+                    <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    <span>Can't Pick Up? Become a Distributor & Get Products Delivered</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Opportunity Section -->
+    <section id="business" class="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-yellow-400/20 text-yellow-400 text-sm font-bold mb-4">
+                    <i data-lucide="star" class="w-4 h-4 mr-2"></i>
+                    Business Opportunity
+                </div>
+                <h2 class="text-5xl font-bold mb-4">Start Your Wellness Business Today</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Join 500+ successful distributors earning extra income with True Organics. No experience needed, full training provided.</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/10">
+                    <div class="text-4xl font-bold gold-text mb-2">500+</div>
+                    <div class="text-gray-400">Active Distributors</div>
+                </div>
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/10">
+                    <div class="text-4xl font-bold gold-text mb-2">R60-R120</div>
+                    <div class="text-gray-400">Product Range</div>
+                </div>
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/10">
+                    <div class="text-4xl font-bold gold-text mb-2">30%</div>
+                    <div class="text-gray-400">Commission Potential</div>
+                </div>
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/10">
+                    <div class="text-4xl font-bold gold-text mb-2">Free</div>
+                    <div class="text-gray-400">To Join</div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i data-lucide="gift" class="w-6 h-6 mr-3 text-yellow-400"></i>
+                        What You Get
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 flex-shrink-0"></i>
+                            <span>Wholesale pricing on all products</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 flex-shrink-0"></i>
+                            <span>Personalized referral code</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 flex-shrink-0"></i>
+                            <span>Marketing materials & images</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 flex-shrink-0"></i>
+                            <span>WhatsApp support group</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 flex-shrink-0"></i>
+                            <span>Weekly training sessions</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i data-lucide="trending-up" class="w-6 h-6 mr-3 text-yellow-400"></i>
+                        How It Works
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0 text-yellow-400 font-bold">1</div>
+                            <span>Sign up for free using the button below</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0 text-yellow-400 font-bold">2</div>
+                            <span>Get your unique distributor code</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0 text-yellow-400 font-bold">3</div>
+                            <span>Share products with friends & family</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0 text-yellow-400 font-bold">4</div>
+                            <span>Earn commission on every sale</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main CTA -->
+            <div class="text-center">
+                <a href="https://trueorganics.life/join-us/TO99252947762" 
+                   target="_blank"
+                   class="distributor-btn px-12 py-6 rounded-full font-bold text-xl inline-flex items-center space-x-3 pulse-gold shadow-2xl hover:scale-105 transition-transform">
+                    <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    <span>Apply to Become a Distributor - It's FREE!</span>
+                    <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                </a>
+                <p class="text-gray-400 mt-4 text-sm">No credit card required • Instant approval • Start earning today</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Distributor Banner 2 -->
+    <section class="py-8 bg-yellow-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+                <h3 class="text-2xl font-bold text-gray-900">Ready to start your wellness business?</h3>
+                <a href="https://trueorganics.life/join-us/TO99252947762" 
+                   target="_blank"
+                   class="bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors inline-flex items-center space-x-2">
+                    <span>Join Now</span>
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -484,12 +716,12 @@
                 <p class="text-xl text-gray-600">Real results from real people</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
                 <!-- Testimonial 1 - Photo -->
                 <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <div class="aspect-square bg-gray-200 relative img-zoom">
                         <img src="https://res.cloudinary.com/dzfh4ry6w/image/upload/v1771437464/IMG-20260218-WA0038_hmkokw.jpg" 
-                             alt="Happy Customer Testimonial" 
+                             alt="Happy Customer" 
                              class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
@@ -500,7 +732,7 @@
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         </div>
-                        <p class="text-gray-700 mb-4">"I have so much more energy throughout the day! No more afternoon crashes. This has changed my life completely."</p>
+                        <p class="text-gray-700 mb-4">"I have so much more energy throughout the day! No more afternoon crashes."</p>
                         <div class="font-semibold text-gray-900">Thandi M.</div>
                         <div class="text-sm text-gray-500">Johannesburg</div>
                     </div>
@@ -521,13 +753,9 @@
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         </div>
-                        <p class="text-gray-700 mb-4">"My skin cleared up in 3 weeks. I'm amazed! I've tried so many products, but True Organics actually works."</p>
+                        <p class="text-gray-700 mb-4">"My skin cleared up in 3 weeks. I'm amazed! This actually works."</p>
                         <div class="font-semibold text-gray-900">Michael D.</div>
                         <div class="text-sm text-gray-500">Durban</div>
-                        <div class="mt-2 inline-flex items-center text-green-700 text-sm font-semibold">
-                            <i data-lucide="play-circle" class="w-4 h-4 mr-1"></i>
-                            Watch video testimonial
-                        </div>
                     </div>
                 </div>
                 
@@ -535,7 +763,7 @@
                 <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <div class="aspect-square bg-gray-200 relative img-zoom">
                         <img src="https://res.cloudinary.com/dzfh4ry6w/image/upload/v1771437424/IMG-20260218-WA0029_gepr3b.jpg" 
-                             alt="Happy Customer Testimonial" 
+                             alt="Happy Customer" 
                              class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
@@ -546,106 +774,23 @@
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                         </div>
-                        <p class="text-gray-700 mb-4">"Best wellness investment I've made. The energy boost is incredible, and I love that it's all natural! Highly recommend."</p>
+                        <p class="text-gray-700 mb-4">"Best wellness investment I've made. The energy boost is incredible!"</p>
                         <div class="font-semibold text-gray-900">Sarah K.</div>
                         <div class="text-sm text-gray-500">Cape Town</div>
                     </div>
                 </div>
             </div>
-            
-            <div class="mt-12 text-center">
-                <button onclick="openVideoModal()" class="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-6 py-3 rounded-full font-semibold hover:bg-green-200 transition-colors">
-                    <i data-lucide="play-circle" class="w-5 h-5"></i>
-                    <span>Watch the full 14-minute wellness journey</span>
-                </button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Distributors Section -->
-    <section id="distributors" class="py-20 bg-green-800 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-4xl font-bold mb-6">Become a Distributor</h2>
-                    <p class="text-xl text-green-100 mb-8">Join our growing network of wellness entrepreneurs. Help others discover True Organics while building your own business.</p>
-                    
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="trending-up" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">High Demand Product</h3>
-                                <p class="text-green-100">Chlorophyll is trending worldwide. Be part of the wellness revolution in South Africa.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="coins" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">Attractive Margins</h3>
-                                <p class="text-green-100">Earn competitive commissions on every sale of Juice and Drops.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="users" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">Full Support</h3>
-                                <p class="text-green-100">Get marketing materials, training, and dedicated WhatsApp support.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="https://trueorganics.life/join-us/TO99252947762" 
-                       target="_blank"
-                       class="inline-flex items-center space-x-2 bg-white text-green-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-all transform hover:scale-105 shadow-lg">
-                        <span>Apply to Become a Distributor</span>
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
-                
-                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-                    <h3 class="text-2xl font-bold mb-6">Distributor Benefits</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-center space-x-3">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-300"></i>
-                            <span>Wholesale pricing on Juice & Drops</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-300"></i>
-                            <span>Personalized referral code</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-300"></i>
-                            <span>Marketing materials & assets</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-300"></i>
-                            <span>Priority WhatsApp support</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-300"></i>
-                            <span>Weekly training sessions</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-300"></i>
-                            <span>Exclusive distributor community</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="mt-8 p-4 bg-green-700/50 rounded-xl border border-green-600">
-                        <p class="text-sm text-green-100 mb-2">Ready to start your wellness business?</p>
-                        <a href="https://trueorganics.life/join-us/TO99252947762" target="_blank" class="text-white font-semibold hover:underline flex items-center">
-                            Sign up now <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
-                        </a>
-                    </div>
-                </div>
+            <!-- Distributor CTA after testimonials -->
+            <div class="bg-gradient-to-r from-green-50 to-yellow-50 rounded-3xl p-8 border-2 border-green-200 text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Love These Results? Help Others Achieve Them & Earn!</h3>
+                <p class="text-gray-600 mb-6">Join our distributor team and turn your wellness journey into income</p>
+                <a href="https://trueorganics.life/join-us/TO99252947762" 
+                   target="_blank"
+                   class="distributor-btn px-8 py-4 rounded-full font-bold text-lg inline-flex items-center space-x-2 pulse-gold">
+                    <span>Become a Distributor</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -657,94 +802,120 @@
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
             </div>
             
-            <div class="space-y-4">
+            <div class="space-y-4 mb-12">
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                     <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-toggle">
                         <span class="font-semibold text-gray-900">What's the difference between Juice and Drops?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform"></i>
                     </button>
                     <div class="px-6 py-4 text-gray-600 hidden bg-gray-50 border-t border-gray-100">
-                        <strong>Juice (R60):</strong> Ready-to-drink liquid. Drink 1/4 of the bottle daily (quarterly consumption). One bottle lasts 4 days.<br><br>
-                        <strong>Drops (R120):</strong> Concentrated formula. Add 10 drops to water daily. One bottle lasts 30 days. More economical for long-term use.
+                        <strong>Juice (R60):</strong> Ready-to-drink, quarterly consumption (4 servings/bottle).<br>
+                        <strong>Drops (R120):</strong> Concentrated, 10 drops daily, lasts 30 days.
                     </div>
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                     <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-toggle">
-                        <span class="font-semibold text-gray-900">How do I order and pay?</span>
+                        <span class="font-semibold text-gray-900">How do I become a distributor?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform"></i>
                     </button>
                     <div class="px-6 py-4 text-gray-600 hidden bg-gray-50 border-t border-gray-100">
-                        Click any WhatsApp button, tell us which product you want (Juice R60 or Drops R120), and we'll send you payment details (EFT or cash on collection). New customers get 10% off!
+                        Click any <strong>"Become a Distributor"</strong> button on this page, fill out the free application at trueorganics.life, and get approved instantly. You'll receive your unique code and training immediately.
                     </div>
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                     <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-toggle">
-                        <span class="font-semibold text-gray-900">Where do I collect my order?</span>
+                        <span class="font-semibold text-gray-900">How much can I earn as a distributor?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform"></i>
                     </button>
                     <div class="px-6 py-4 text-gray-600 hidden bg-gray-50 border-t border-gray-100">
-                        233 Bree Street, Master Mall, opposite Fashion Fusion Building, first shop. Ask for MC (078 073 1307) when you arrive for directions.
+                        Earnings vary based on effort. Most active distributors earn R500-R5000+ monthly selling Juice (R60) and Drops (R120). You buy at wholesale and sell at retail, keeping the difference plus bonuses.
                     </div>
                 </div>
-                
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-toggle">
-                        <span class="font-semibold text-gray-900">How long until I see results?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform"></i>
-                    </button>
-                    <div class="px-6 py-4 text-gray-600 hidden bg-gray-50 border-t border-gray-100">
-                        Most customers notice increased energy within 1-2 weeks and skin improvements within 3-4 weeks of daily use.
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-toggle">
-                        <span class="font-semibold text-gray-900">Is it safe?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform"></i>
-                    </button>
-                    <div class="px-6 py-4 text-gray-600 hidden bg-gray-50 border-t border-gray-100">
-                        Yes! True Organics Chlorophyll is 100% natural, vegan, organic, with no sugar added. Safe for daily use.
-                    </div>
+            </div>
+
+            <!-- Final Distributor Push -->
+            <div class="text-center bg-gray-900 rounded-3xl p-8 text-white">
+                <h3 class="text-2xl font-bold mb-3">Still Have Questions?</h3>
+                <p class="text-gray-300 mb-6">Join our WhatsApp group for distributors or apply now and we'll guide you</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://trueorganics.life/join-us/TO99252947762" 
+                       target="_blank"
+                       class="distributor-btn px-8 py-4 rounded-full font-bold inline-flex items-center justify-center space-x-2 pulse-gold">
+                        <span>Apply Now - It's Free</span>
+                    </a>
+                    <a href="https://wa.me/27719117375?text=Hi%20Emco%20Green!%20I%20have%20questions%20about%20becoming%20a%20distributor.%20Please%20help%20me." 
+                       target="_blank"
+                       class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-bold inline-flex items-center justify-center space-x-2">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        <span>Ask on WhatsApp</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
-    <section class="py-20 bg-green-900 text-white text-center">
+    <section class="py-20 bg-gradient-to-br from-green-900 to-gray-900 text-white text-center">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Wellness?</h2>
-            <p class="text-xl text-green-100 mb-8">Choose your Chlorophyll today and get 10% off your first order.</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Two Ways to Get Started</h2>
             
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                <a href="https://wa.me/27719117375?text=Hi%20Emco%20Green!%20I'm%20ready%20to%20order%20True%20Organics%20Chlorophyll%20with%20my%2010%25%20discount." 
-                   target="_blank"
-                   class="bg-white text-green-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-all transform hover:scale-105 flex items-center space-x-2 shadow-lg">
-                    <i data-lucide="message-circle" class="w-5 h-5"></i>
-                    <span>Order Now on WhatsApp</span>
-                </a>
-                
-                <button onclick="openVideoModal()" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all flex items-center space-x-2">
-                    <i data-lucide="play-circle" class="w-5 h-5"></i>
-                    <span>Watch Full Video</span>
-                </button>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Buy Products -->
+                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Buy Products</h3>
+                    <p class="text-gray-300 mb-6">Start your wellness journey with True Organics Chlorophyll</p>
+                    <ul class="text-left text-sm text-gray-300 mb-6 space-y-2">
+                        <li>• Juice: R60 (First order: R54)</li>
+                        <li>• Drops: R120 (First order: R108)</li>
+                        <li>• Pick up in Johannesburg</li>
+                    </ul>
+                    <a href="https://wa.me/27719117375?text=Hi%20Emco%20Green!%20I%20want%20to%20order%20True%20Organics%20Chlorophyll%20with%2010%25%20discount." 
+                       target="_blank"
+                       class="block w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-full font-bold transition-colors">
+                        Order on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Become Distributor -->
+                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-xs font-bold">
+                        RECOMMENDED
+                    </div>
+                    <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-gray-900"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Become a Distributor</h3>
+                    <p class="text-gray-300 mb-6">Start your own wellness business and earn income</p>
+                    <ul class="text-left text-sm text-gray-300 mb-6 space-y-2">
+                        <li>• Free to join</li>
+                        <li>• Wholesale pricing</li>
+                        <li>• Earn on every sale</li>
+                        <li>• Full training provided</li>
+                    </ul>
+                    <a href="https://trueorganics.life/join-us/TO99252947762" 
+                       target="_blank"
+                       class="block w-full distributor-btn py-4 rounded-full font-bold pulse-gold">
+                        Apply Now - It's Free!
+                    </a>
+                </div>
             </div>
             
-            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-lg mx-auto mb-6">
+            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-lg mx-auto">
                 <p class="text-green-100 text-sm mb-2">Collection Address:</p>
                 <p class="font-semibold">233 Bree Street, Master Mall</p>
                 <p class="text-sm text-green-200">Opposite Fashion Fusion, First Shop</p>
                 <p class="text-sm text-green-200 mt-2">Ask for MC: <a href="tel:+27780731307" class="underline hover:text-white">078 073 1307</a></p>
             </div>
-            
-            <p class="text-green-200 text-sm">Questions? WhatsApp us: <a href="https://wa.me/27719117375" class="underline hover:text-white">+27 71 911 7375</a></p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+    <footer class="bg-gray-950 text-gray-400 py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
@@ -755,7 +926,7 @@
                         <span class="text-xl font-bold text-white">Emco Green</span>
                     </div>
                     <p class="text-sm mb-2">Promoting True Organics Liquid Chlorophyll</p>
-                    <p class="text-sm">Your trusted source for natural wellness in South Africa.</p>
+                    <p class="text-sm">Natural wellness products & business opportunity.</p>
                 </div>
                 
                 <div>
@@ -763,17 +934,15 @@
                     <ul class="space-y-2 text-sm">
                         <li><a href="#products" class="hover:text-green-400 transition-colors">Chlorophyll Juice (R60)</a></li>
                         <li><a href="#products" class="hover:text-green-400 transition-colors">Chlorophyll Drops (R120)</a></li>
-                        <li><a href="#distributors" class="hover:text-green-400 transition-colors">Become a Distributor</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Collection Point</h4>
+                    <h4 class="text-white font-semibold mb-4">Business</h4>
                     <ul class="space-y-2 text-sm">
-                        <li>233 Bree Street, Master Mall</li>
-                        <li>Opposite Fashion Fusion</li>
-                        <li>First Shop, Johannesburg</li>
-                        <li>Contact MC: 078 073 1307</li>
+                        <li><a href="https://trueorganics.life/join-us/TO99252947762" target="_blank" class="hover:text-yellow-400 transition-colors">Become a Distributor</a></li>
+                        <li><a href="#business" class="hover:text-yellow-400 transition-colors">Business Opportunity</a></li>
+                        <li><a href="https://wa.me/27719117375" class="hover:text-green-400 transition-colors">Distributor Support</a></li>
                     </ul>
                 </div>
                 
@@ -781,12 +950,12 @@
                     <h4 class="text-white font-semibold mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm">
                         <li class="flex items-center space-x-2">
-                            <i data-lucide="phone" class="w-4 h-4"></i>
-                            <span>+27 71 911 7375</span>
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <span>233 Bree St, Master Mall</span>
                         </li>
                         <li class="flex items-center space-x-2">
-                            <i data-lucide="map-pin" class="w-4 h-4"></i>
-                            <span>Johannesburg, SA</span>
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span>+27 71 911 7375</span>
                         </li>
                     </ul>
                 </div>
@@ -817,14 +986,9 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
-                
                 <button onclick="closeVideoModal()" class="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
-            </div>
-            <div class="bg-gray-900 p-4 text-center">
-                <h3 class="text-white font-semibold">True Organics Wellness Journey</h3>
-                <p class="text-gray-400 text-sm">Learn everything about chlorophyll and its benefits</p>
             </div>
         </div>
     </div>
@@ -843,14 +1007,9 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
-                
                 <button onclick="closeTestimonialModal()" class="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
-            </div>
-            <div class="bg-gray-900 p-4 text-center">
-                <h3 class="text-white font-semibold">Customer Success Story</h3>
-                <p class="text-gray-400 text-sm">Real results with True Organics Chlorophyll</p>
             </div>
         </div>
     </div>
@@ -858,6 +1017,20 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+        
+        // Sticky distributor banner on scroll
+        window.addEventListener('scroll', () => {
+            const stickyDistributor = document.getElementById('stickyDistributor');
+            const navbar = document.getElementById('navbar');
+            
+            if (window.scrollY > 300) {
+                stickyDistributor.classList.add('visible');
+                navbar.classList.add('shadow-md');
+            } else {
+                stickyDistributor.classList.remove('visible');
+                navbar.classList.remove('shadow-md');
+            }
+        });
         
         // FAQ Accordion
         document.querySelectorAll('.faq-toggle').forEach(button => {
@@ -870,11 +1043,10 @@
             });
         });
         
-        // 14-Minute Explanatory Video Modal
+        // Video Modal Functions
         function openVideoModal() {
             const modal = document.getElementById('videoModal');
             const iframe = document.getElementById('explainerVideo');
-            // YouTube embed URL with autoplay
             iframe.src = 'https://www.youtube.com/embed/iQLexYJGWws?autoplay=1&rel=0';
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -884,17 +1056,15 @@
             if (!event || event.target.id === 'videoModal' || event.target.closest('button')) {
                 const modal = document.getElementById('videoModal');
                 const iframe = document.getElementById('explainerVideo');
-                iframe.src = ''; // Stop video
+                iframe.src = '';
                 modal.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
         }
         
-        // Testimonial Video Modal
         function openTestimonialVideo() {
             const modal = document.getElementById('testimonialModal');
             const iframe = document.getElementById('testimonialVideo');
-            // YouTube embed URL with autoplay
             iframe.src = 'https://www.youtube.com/embed/Uo9_HLLQ3tg?autoplay=1&rel=0';
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -904,13 +1074,13 @@
             if (!event || event.target.id === 'testimonialModal' || event.target.closest('button')) {
                 const modal = document.getElementById('testimonialModal');
                 const iframe = document.getElementById('testimonialVideo');
-                iframe.src = ''; // Stop video
+                iframe.src = '';
                 modal.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
         }
         
-        // Smooth scroll for navigation links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -919,16 +1089,6 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
-        
-        // Add scroll effect to navbar
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-md');
-            } else {
-                navbar.classList.remove('shadow-md');
-            }
         });
         
         // Close modals with Escape key
